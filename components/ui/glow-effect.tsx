@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { motion, Transition } from 'motion/react';
+import { motion, type Transition } from 'framer-motion';
 
 export type GlowEffectProps = {
   className?: string;
@@ -133,7 +133,7 @@ export function GlowEffect({
     <motion.div
       style={{
         ...style,
-        '--tw-scale': scale,
+        ['--tw-scale' as string]: scale,
         scale: `var(--tw-scale)`,
         willChange: 'transform, background',
         backfaceVisibility: 'hidden',

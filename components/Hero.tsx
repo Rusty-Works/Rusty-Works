@@ -10,7 +10,7 @@ export default function Hero() {
     const router = useRouter()
     
     return (
-        <div className="min-w-full overflow-hidden flex items-center justify-center relative min-h-[800px] h-screen">
+        <div className="min-w-full overflow-hidden flex items-center justify-center relative min-h-[800px] h-screen xl:px-2">
             <video
                 autoPlay
                 loop
@@ -37,7 +37,7 @@ export default function Hero() {
                             <div className="h-[1px] w-20 bg-gradient-to-r from-white/20 via-white/40 to-white/20"></div>
                         </div>
                         
-                        <motion.div 
+                        {/* <motion.div 
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -78,10 +78,10 @@ export default function Hero() {
                                     className="text-lg font-medium tracking-wide text-white/90  absolute whitespace-nowrap"
                                     style={{ transformOrigin: "center" }}
                                 >
-                                    Docs
+                                    Docs 🦀
                                 </motion.span>
                             </div>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
 
                     <button className=' px-6 py-3 bg-transparent text-white border-2 border-white rounded-2xl font-bold hover:opacity-80 transition-all hover:bg-white/80 hover:text-black hover:border-white/80 duration-400 ease-in-out'

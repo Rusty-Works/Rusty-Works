@@ -7,12 +7,11 @@ import { useState, useEffect } from 'react';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Handle scroll lock without layout shift
     useEffect(() => {
         if (isMenuOpen) {
-            // Get current scroll width
+
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            // Add padding to prevent layout shift when scrollbar disappears
+
             document.body.style.paddingRight = `${scrollbarWidth}px`;
             document.body.style.overflow = 'hidden';
         } else {
@@ -113,7 +112,7 @@ export default function Header() {
             </header>
 
             {/* Mobile Header */}
-            <header className="absolute top-0 w-full px-6 z-50 lg:hidden ">
+            <header className="absolute top-0 w-full px-6 z-50 lg:hidden pt-10">
                 <div className="flex justify-between items-center relative z-50  ">
                     <a href="/" className="text-2xl font-bold">
                             <img src="/logo.png" alt="RustySky Logo" className="w-35" />
@@ -147,9 +146,9 @@ export default function Header() {
                     ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
                 `}>
                     <div className={`
-                        flex flex-col items-start p-6 pt-24 space-y-6
+                        flex flex-col items-start p-6 pt-24 mt-20 space-y-6
                         transition-all duration-500 ease-in-out
-                        ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'} border-b-2 border-black border-dashed w-3/4  ml-8 mt-8
+                        ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}  w-3/4  ml-8 mt-8
                     `}>
                         {menuItems.map((item, index) => (
                             <a
