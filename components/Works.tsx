@@ -132,10 +132,7 @@ export default function Works() {
     );
 }
 
-import { GlowEffect } from '@/components/ui/glow-effect';
 import { motion } from 'framer-motion';
-import { image } from 'motion/react-client';
-
 
 interface GlowEffectCardProps {
     title: string;

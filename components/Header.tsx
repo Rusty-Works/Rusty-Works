@@ -33,10 +33,7 @@ export default function Header() {
         { title: 'Github', href: '/contact' }
     ];
 
-    const rustyworks = [
-        {title : 'Docs' , href :'/docs' , image : '/logo.png'},
-        {title : 'Works' , href :'/works', image : '/logo.png'},
-]
+
 
     return (
         <>
