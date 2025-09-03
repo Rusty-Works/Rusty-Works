@@ -3,6 +3,8 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,9 +73,9 @@ export default function Header() {
                                 key={item.title}
                                 className="relative group  px-8 py-8"
                             >
-                                <a
+                                <Link
                                     href={item.href}
-                                    className="text-md 2xl:text-xl   relative block transition-all duration-100 ease-in-out"
+                                    className="text-md 2xl:text-xl relative block transition-all duration-100 ease-in-out"
                                 >
                                     <span className="block font-regular group-hover:opacity-0 duration-50 ease-out">
                                         {item.title}
@@ -81,7 +83,7 @@ export default function Header() {
                                     <span className="font-satisfy absolute inset-0 opacity-0 group-hover:opacity-100 duration-50 ease-in">
                                         {item.title}
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         ))}
                     </nav>
@@ -91,9 +93,15 @@ export default function Header() {
             {/* Mobile Header */}
             <header className="absolute top-0 w-full px-6 z-50 lg:hidden pt-10">
                 <div className="flex justify-between items-center relative z-50  ">
-                    <a href="/" className="text-2xl font-bold">
-                            <img src="/logo.png" alt="RustySky Logo" className="w-35" />
-                    </a>
+                    <Link href="/" className="text-2xl font-bold">
+                            <Image 
+                                src="/logo.png" 
+                                alt="RustySky Logo" 
+                                width={140}
+                                height={35}
+                                className="w-35" 
+                            />
+                    </Link>
                     
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}

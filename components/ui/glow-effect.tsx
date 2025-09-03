@@ -43,7 +43,7 @@ export function GlowEffect({
     ease: [0.4, 0, 0.2, 1],
   };
 
-  const animations = {
+  const BASE_ANIMATIONS = {
     rotate: {
       background: [
         `conic-gradient(from 0deg at 50% 50%, ${colors.join(', ')})`,

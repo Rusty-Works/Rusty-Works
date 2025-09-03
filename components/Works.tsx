@@ -21,6 +21,13 @@ export default function Works() {
             color: ['#7A2C17', '#A13B1F', '#C14D30', '#E85D3F'],
             tech: "Tokio, RocketRS",
             image: "/projects/proc3.png"
+        },
+          {
+            title: "Real-time Processing Engine",
+            description: "Advanced data processing system leveraging Rust's fearless concurrency. Handles massive data streams with minimal latency and maximum reliability.",
+            color: ['#7A2C17', '#A13B1F', '#C14D30', '#E85D3F'],
+            tech: "Tokio, RocketRS",
+            image: "/projects/proc3.png"
         }
     ]
     return ( 
@@ -40,7 +47,7 @@ export default function Works() {
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                             Showcasing the power of Rust through practical, high-performance solutions. 
-                            Each project demonstrates what's possible when robust backend meets intuitive design.
+                            Each project demonstrates             What&apos;s possible when robust backend meets intuitive design.
                         </p>
                        
                     </motion.div>
