@@ -3,42 +3,42 @@
 export default function Works() {   
     const projects = [
         {
-            title: "High-Performance API Gateway",
-            description: "A lightning-fast API Gateway that handles concurrent requests with Rust's zero-cost abstractions. Designed for scalability and real-world performance demands.",
+            title: "Rusty-Types",
+            description: "this is cli type, a super fast and fun terminal app that helps you practice typing. it's built with rust and keeps things simple yet engaging. you'll get to practice typing actual rust code snippets while tracking your speed.",
             color: ['#C14D30', '#E85D3F', '#F47B52', '#FF9466'],
-            tech: "Actix-web, Tokio",
-            image: "/projects/proc1.png" // You'll need to add these images to your public folder
-        },
+            tech: "Crossterm, Rand, Rust 2021",
+            image: "/projects/proc1.png",},
         {
-            title: "Blockchain Data Explorer",
-            description: "Interactive blockchain visualization platform that makes complex data structures accessible. Real-time block exploration with intuitive visual representations.",
+            title: "Rusty-Server",
+            description: "a fast and efficient http api server built with axum that lets you interact with the solana blockchain. you can use it to get information about accounts, check balances, see transactions, view the status of the network, and much more.",
             color: ['#A13B1F', '#C14D30', '#E85D3F', '#F47B52'],
-            tech: "Rust, WebAssembly, D3.js",
-            image: "/proc2.png"
+            tech: "Axum, tokio, spl-token",
+            image: "/projects/proc2.png"
         },
         {
             title: "Real-time Processing Engine",
             description: "Advanced data processing system leveraging Rust's fearless concurrency. Handles massive data streams with minimal latency and maximum reliability.",
             color: ['#7A2C17', '#A13B1F', '#C14D30', '#E85D3F'],
             tech: "Tokio, RocketRS",
-            image: "/proc3.png"
+            image: "/projects/proc3.png"
         }
     ]
     return ( 
-        <section className='w-full min-h-screen py-32 bg-gradient-to-b from-white to-gray-50'
+        <section className='w-full min-h-screen py-32 bg-gradient-to-b from-white via-gray-50 to-white'
             id='works'
         >
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-10">
+                <div className="mb-20 relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#C14D30]/20 to-[#F47B52]/20 blur-3xl opacity-75 -z-10"></div>
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-2xl"
+                        className="max-w-3xl mx-auto text-center"
                     >
-                        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                        <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#C14D30] to-[#F47B52]">
                             Featured Projects
                         </h2>
-                        <p className="text-xl text-gray-600 leading-relaxed">
+                        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                             Showcasing the power of Rust through practical, high-performance solutions. 
                             Each project demonstrates what's possible when robust backend meets intuitive design.
                         </p>
@@ -46,23 +46,20 @@ export default function Works() {
                     </motion.div>
                 </div>
                 
-                <div className="grid grid-cols-1 gap-y-32">
-                    <div className='w-full bg-black h-[1px]'></div>
+                <div className="grid grid-cols-1 gap-y-40">
+                    <div className='w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent'></div>
                   
                     {projects.map((project, index) => (
                         <div 
                             key={index}
-                            className="flex flex-col lg:flex-row items-center gap-16"
+                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 relative`}
                         >
                             <motion.div 
                                 className="w-full lg:w-7/12"
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ 
-                                    duration: 0.5,
-                                    ease: [0.22, 1, 0.36, 1]
-                                }}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
                             >
                                 <GlowEffectCard
                                     title={project.title}
@@ -74,23 +71,22 @@ export default function Works() {
                             </motion.div>
 
                             <motion.div 
-                                className="w-full lg:w-5/12 space-y-6"
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
+                                className={`w-full lg:w-5/12 space-y-8 ${index % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'}`}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
                                 transition={{ 
                                     duration: 0.5,
-                                    delay: 0.1,
-                                    ease: [0.22, 1, 0.36, 1]
+                                    delay: 0.1
                                 }}
                             >
-                                <h3 className="text-3xl font-bold text-gray-900">{project.title}</h3>
+                                <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">{project.title}</h3>
                                 <p className="text-lg text-gray-600 leading-relaxed">{project.description}</p>
                                 <div className="flex flex-wrap gap-3">
                                     {project.tech.split(', ').map((t, i) => (
                                         <span 
                                             key={i} 
-                                            className="px-4 py-2 bg-gray-100 rounded-full text-gray-600 text-sm"
+                                            className="px-4 py-2 bg-gradient-to-r from-gray-100 to-white rounded-full text-gray-700 text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-300"
                                             style={{
                                                 willChange: 'transform',
                                                 transform: 'translateZ(0)'
@@ -100,7 +96,11 @@ export default function Works() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="group inline-flex items-center gap-2 text-gray-900 font-medium cursor-pointer">
+                                <motion.div 
+                                    className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#C14D30] to-[#F47B52] text-white rounded-full font-medium cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
                                     <span>View Documentation</span>
                                     <svg
                                         className="w-5 h-5 transform transition-transform duration-300 ease-out group-hover:translate-x-1"
@@ -115,13 +115,12 @@ export default function Works() {
                                         <path d="M5 12h14" />
                                         <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         </div>
                     ))}
                 </div>
             </div>
-            <Footer />
         </section>
     );
 }
@@ -129,7 +128,7 @@ export default function Works() {
 import { GlowEffect } from '@/components/ui/glow-effect';
 import { motion } from 'framer-motion';
 import { image } from 'motion/react-client';
-import Footer from './Footer';
+
 
 interface GlowEffectCardProps {
     title: string;
@@ -140,90 +139,64 @@ interface GlowEffectCardProps {
 }
 export function GlowEffectCard({ title, description, colors, tech, image }: GlowEffectCardProps) {
     return (
-        <div 
+        <motion.div 
             className="relative group transform-gpu"
             style={{ willChange: 'transform' }}
         >
-            {/* Glow Effects */}
+            {/* Simple gradient border */}
             <div 
-                className="absolute -inset-1 rounded-2xl opacity-50 transition-[filter,opacity] duration-500 group-hover:opacity-85"
+                className="absolute -inset-[1px] rounded-2xl opacity-50 group-hover:opacity-75 transition-opacity"
                 style={{
-                    background: `linear-gradient(45deg, ${colors[0]}, ${colors[1]}, ${colors[2]}, ${colors[3]})`,
-                    filter: 'blur(16px)',
-                    willChange: 'filter, opacity',
-                    transform: 'translateZ(0)'
-                }}
-            ></div>
-            <div 
-                className="absolute -inset-1 rounded-2xl opacity-40 mix-blend-soft-light transition-[filter,opacity] duration-500 group-hover:opacity-75"
-                style={{
-                    background: `linear-gradient(135deg, ${colors[3]}, ${colors[2]}, ${colors[1]}, ${colors[0]})`,
+                    background: `linear-gradient(45deg, ${colors[0]}, ${colors[3]})`,
                     filter: 'blur(8px)',
-                    willChange: 'filter, opacity',
-                    transform: 'translateZ(0)'
                 }}
-            ></div>
-            
+></div>
             <div 
-                className="relative aspect-[4/3] rounded-xl shadow-2xl overflow-hidden transform-gpu transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                className="relative aspect-[16/10] rounded-xl shadow-2xl overflow-hidden transform-gpu"
                 style={{ willChange: 'transform' }}
             >
-                {/* Background Image */}
+                {/* Background Image with Gradient Overlay */}
                 <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
                     style={{ 
                         backgroundImage: `url(${image})`,
                         willChange: 'transform'
                     }}
-                />
+                >
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/10 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
 
                 {/* Content Gradient */}
                 <div 
-                    className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+                    className="absolute inset-0"
                     style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                 >
                     <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <div className="space-y-4">
-                            <h3 className="text-2xl font-bold text-white transform-gpu">
-                                {title}
-                            </h3>
-                            
-                            <p className="text-gray-200 line-clamp-2 transform-gpu text-sm">
-                                {description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 pt-2">
-                                {tech.split(', ').map((t, i) => (
-                                    <div 
-                                        key={i} 
-                                        className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm transform-gpu"
-                                    >
-                                        <span className="text-white/90 text-xs">{t}</span>
-                                    </div>
-                                ))}
-                            </div>
-
+                        <div className="space-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                             <div 
-                                className="group/btn inline-flex items-center gap-2 text-white/90 hover:text-white cursor-pointer pt-2"
+                                className="backdrop-blur-md bg-white/10 rounded-lg p-4 transform-gpu transition-all duration-300"
                             >
-                                <span className="text-sm font-medium">Explore Project</span>
-                                <svg
-                                    className="w-4 h-4 transform transition-transform duration-300 ease-out group-hover/btn:translate-x-1"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M5 12h14" />
-                                    <path d="M12 5l7 7-7 7" />
-                                </svg>
+                                <div className="group/btn inline-flex items-center justify-center gap-2 text-white w-full">
+                                    <span className="text-sm font-medium">Explore Project</span>
+                                    <svg
+                                        className="w-4 h-4 transform transition-transform duration-300 ease-out group-hover/btn:translate-x-1"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
