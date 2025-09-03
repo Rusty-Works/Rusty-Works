@@ -10,7 +10,11 @@ export default function Hero() {
     const router = useRouter()
     
     return (
-        <div className="min-w-full overflow-hidden flex items-center justify-center relative min-h-[800px] h-screen xl:px-2">
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="min-w-full overflow-hidden flex items-center justify-center relative min-h-[800px] h-screen xl:px-2">
             <video
                 autoPlay
                 loop
@@ -90,6 +94,6 @@ export default function Hero() {
                     </button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

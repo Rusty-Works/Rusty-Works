@@ -40,7 +40,7 @@ export default function Works() {
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                             Showcasing the power of Rust through practical, high-performance solutions. 
-                            Each project demonstrates what's possible when robust backend meets intuitive design.
+                            Each project demonstrates what&apos;s possible when robust backend meets intuitive design.
                         </p>
                        
                     </motion.div>
@@ -125,9 +125,7 @@ export default function Works() {
     );
 }
 
-import { GlowEffect } from '@/components/ui/glow-effect';
 import { motion } from 'framer-motion';
-import { image } from 'motion/react-client';
 
 
 interface GlowEffectCardProps {
