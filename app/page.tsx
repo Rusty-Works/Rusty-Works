@@ -18,15 +18,10 @@ const  Page = ()  => {
       <Header />
       <Hero />
       <Works />
-
-
-
-      {/* <Footer /> */}
-    
+      <Footer />
     </motion.div>
   )
 }
-
 
 export default Page;
 

@@ -25,10 +25,10 @@ export default function Header() {
     }, [isMenuOpen]);
 
     const menuItems = [
-        { title: 'Our Company', href: '/company' },
-        { title: 'Pipeline', href: '/pipeline' },
-        { title: 'Media & Investors', href: '/media' },
-        { title: 'Contact', href: '/contact' }
+        { title: 'Docs', href: '/company' },
+        { title: 'Works', href: '/pipeline' },
+        { title: 'Live & Testing', href: '/media' },
+        { title: 'Github', href: '/contact' }
     ];
 
     const rustyworks = [
@@ -43,9 +43,11 @@ export default function Header() {
             w-2/3 2xl:px-8">   
                 <div className="max-w-8xl mx-auto flex justify-between items-center">
                     <div className="text-xl font-bold flex flex-row-1 items-center">
-                      <img src="/logo.png" alt="RustySky Logo" className="w-32" />
+                      {/* <img src="/logo.png" alt="RustySky Logo" className="w-32" />
+                       */}
+                       <span className='text-4xl text-white  font-bold'>Rusty <span className='font-satisfy'>Works</span></span>              
                       <div className="relative ml-2">
-                        <img 
+                        {/* <img 
                           width="30" 
                           height="30" 
                           src="https://img.icons8.com/?size=100&id=40021&format=png&color=FFFFFF" 
@@ -56,35 +58,10 @@ export default function Header() {
                           alt="expand-arrow--v2"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setIsMenuOpen(!isMenuOpen);
                           }}
-                        />
+                        /> */}
 
-                        <div className={`
-                          absolute top-full left-0 mt-2
-                          transition-all duration-300 ease-in-out
-                          ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0  translate-y-0'}
-                          z-[60]
-                        `}>
-                          <div className={`
-                            flex flex-col items-start p-4 space-y-4 bg-white/5 mt-
-                            border-b-0 border-x-0 border-white/20 border-t-0 backdrop-blur-4xl rounded-b-xl
-                            min-w-[200px]  mt-[21px] 
-                          `}>
-                            {rustyworks.map((item, index) => (
-                              <div
-                                key={item.title}
-                                className="text-md font-bold 2xl:text-lg text-white hover:font-satisfy transition-all duration-300 ease-in-out  p-2"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setIsMenuOpen(false);
-                                }}
-                              >
-                                <img src={item.image} alt="" className='w-auto h-auto'/>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+     
                       </div>
                     </div>
                     
@@ -96,12 +73,12 @@ export default function Header() {
                             >
                                 <a
                                     href={item.href}
-                                    className="text-md 2xl:text-lg   relative block transition-all duration-100 ease-in-out"
+                                    className="text-md 2xl:text-xl   relative block transition-all duration-100 ease-in-out"
                                 >
-                                    <span className="block font-regular group-hover:opacity-0 transition-none duration-0">
+                                    <span className="block font-regular group-hover:opacity-0 duration-50 ease-out">
                                         {item.title}
                                     </span>
-                                    <span className="font-satisfy absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <span className="font-satisfy absolute inset-0 opacity-0 group-hover:opacity-100 duration-50 ease-in">
                                         {item.title}
                                     </span>
                                 </a>
