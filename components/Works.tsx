@@ -35,7 +35,7 @@ export default function Works() {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#C14D30] to-[#F47B52]">
+                        <h2 className="text-6xl md:text-7xl font-bold md:mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#C14D30] to-[#F47B52]">
                             Featured Projects
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
@@ -46,7 +46,7 @@ export default function Works() {
                     </motion.div>
                 </div>
                 
-                <div className="grid grid-cols-1 gap-y-40">
+                <div className="grid grid-cols-1 md:gap-y-40 gap-y-30">
                     <div className='w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent'></div>
                   
                     {projects.map((project, index) => (
