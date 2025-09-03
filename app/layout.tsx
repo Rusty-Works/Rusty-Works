@@ -7,22 +7,22 @@ import { ScrollProvider } from "@/components/providers/ScrollProvider";
 const skyFont = localFont({
   src: [
     {
-      path: './font/regular.woff2',
+      path: '../public/font/Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './font/bold.woff2',
+      path: '../public/font/Bold.woff2',
       weight: '700',
       style: 'normal',
     },
     {
-      path: './font/ultrabold.woff2',
+      path: '../public/font/Ultrabold.woff2',
       weight: '800',
       style: 'normal',
     },
     {
-      path: './font/ultralight.woff2',
+      path: '../public/font/Ultralight.woff2',
       weight: '200',
       style: 'normal',
     }
