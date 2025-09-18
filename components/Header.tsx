@@ -27,10 +27,10 @@ export default function Header() {
     }, [isMenuOpen]);
 
     const menuItems = [
-        { title: 'Docs', href: '/company' },
-        { title: 'Works', href: '/pipeline' },
-        { title: 'Live & Testing', href: '/media' },
-        { title: 'Github', href: '/contact' }
+        { title: 'Docs', href: 'https://github.com/Rusty-Works/Rusty-Works' },
+        { title: 'Works', href: 'https://github.com/Rusty-Works/Rusty-Works' },
+        { title: 'Live & Testing', href: 'https://github.com/Rusty-Works/Rusty-Works' },
+        { title: 'Github', href: 'https://github.com/Rusty-Works/Rusty-Works' }
     ];
 
     const rustyworks = [
